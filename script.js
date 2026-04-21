@@ -2,8 +2,8 @@ const form = document.getElementById("search-form");
 const input = document.getElementById("word-input");
 const results = document.getElementById("results");
 
-// EVENT LISTENER
-form.addEventListener("submit", async (e) => {
+// event listener
+form.addEventListener("submit", async(e) => {
     e.preventDefault();
 
     const word = input.value.trim();
@@ -13,14 +13,13 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
-    fetchWord(word);
+    await fetchWord(word);
 
     // clear input after search
     input.value = "";
 });
 
-
-// FETCH FROM API
+// Api fetch
 async function fetchWord(word) {
     try {
         results.innerHTML = "<p>Loading...</p>";
@@ -43,7 +42,7 @@ async function fetchWord(word) {
 }
 
 
-// PARSE DATA
+// Give functionality to audio,synonyms and pronunciation
 function parseData(data) {
     const entry = data[0];
 
@@ -77,10 +76,10 @@ function parseData(data) {
     }
 
     updateDOM(word, definition, pronunciation, synonyms, audioUrl);
-}
+}       
 
 
-// UPDATE DOM
+// DOM UPDATE
 function updateDOM(word, definition, pronunciation, synonyms, audioUrl) {
     results.innerHTML = `
         <div class="result-box">
@@ -93,8 +92,7 @@ function updateDOM(word, definition, pronunciation, synonyms, audioUrl) {
 
             ${audioUrl ? `<button id="play-audio">🔊</button>` : ""}
         </div>
-    `;
-
+    `;   
     if (audioUrl) {
         const audio = new Audio(audioUrl);
 
