@@ -90,7 +90,7 @@ function updateDOM(word, definition, pronunciation, synonyms, audioUrl) {
             <p><strong>Definition:</strong> ${definition}</p>
             <p><strong>Synonyms:</strong> ${synonyms.join(", ")}</p>
 
-            ${audioUrl ? `<button id="play-audio">🔊</button>` : ""}
+            ${audioUrl ? `<button id="play-audio">🔊Press here to hear the pronunciation</button>` : ""}
         </div>
     `;   
     if (audioUrl) {
