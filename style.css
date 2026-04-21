@@ -45,7 +45,7 @@ h1{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 300px;
+    height: 400px;
     overflow-y: auto;
 }
 
@@ -64,3 +64,14 @@ body{
     background-color: #DDDEE4;
 }
 
+#play-audio {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #907f9f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+}
